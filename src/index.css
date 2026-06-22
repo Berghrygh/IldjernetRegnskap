@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-feature-settings: "tnum" 1;
+  }
+  body {
+    @apply bg-slate-100 text-slate-800 antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium
+      transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-secondary {
+    @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50;
+  }
+  .btn-danger {
+    @apply btn border border-rose-200 bg-white text-rose-700 hover:bg-rose-50;
+  }
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm
+      shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500;
+  }
+  .label {
+    @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Print: show only the report area, hide chrome. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-area {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+  @page {
+    margin: 18mm 14mm;
+  }
+}

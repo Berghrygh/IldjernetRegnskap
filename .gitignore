@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local dev helpers (machine-specific / Claude preview)
+.claude/
+run-dev.sh
+
+# OS / editor
+.DS_Store
+*.local
+.vscode/
+.idea/
